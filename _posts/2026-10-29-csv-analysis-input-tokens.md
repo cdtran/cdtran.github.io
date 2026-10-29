@@ -27,9 +27,9 @@ I wanted to build a data analysis tool. The MVP would take in CSVs and let peopl
 
 I thought I could start with CSVs to get traction. But I wasn't sure what my tool would offer that someone couldn't already get by uploading a file to an AI tool.
 
-One possibility was cost. My assumption was that when an LLM analyzes an uploaded CSV, the entire dataset goes into the model's context. If that were true, more rows would mean more input tokens and a higher cost of analysis.
+I thought I could make the analysis cheaper. My assumption was that when an LLM analyzes an uploaded CSV, the entire dataset goes into the model's context. If that were true, more rows would mean more input tokens and a higher cost of analysis.
 
-Maybe there was an opportunity to build a more efficient architecture. My idea was to turn a user's question into a query, run it outside the LLM, then feed the results back for analysis.
+If this was true, maybe I could build something more efficient. My idea was to turn a user's question into a query, run it outside the LLM, then feed the results back for analysis.
 
 I wanted to test my assumptions before building out the product.
 
@@ -91,15 +91,15 @@ The traces showed it reading the full CSVs and calculating the answers with code
 
 The files contained 100, 200, and 300 distinct products. Only analyzing the first thousand rows would've missed the extra product ids in the larger files.
 
-The token counts and execution traces support a narrower conclusion: in this workflow, the full file could be processed with Python without the input-token count growing with every row.
+The token counts and traces suggest Python processed the full file without passing every row into the model's context.
 
 It doesn't prove that zero rows reached the model, or that every way of uploading a CSV works the same way. But it didn't support my assumption that the entire CSV had to go into context.
 
 ## What this means for the idea
 
-The completed pilot cost an estimated $0.12 for nine questions, including reserved container charges.
+The nine question test cost about $0.12, including estimated container costs.
 
-But the input tokens are the more useful result for the decision I was trying to make. Increasing the file size from 1,000 to 100,000 rows didn't create the increase I had expected.
+The input token counts are what affected my decision. Increasing the file size from 1,000 to 100,000 rows didn't create the increase I had expected.
 
 Response times stayed similar in this test, though larger or more complex workloads could take longer.
 
