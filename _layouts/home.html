@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<p><a href="{{ '/about/' | relative_url }}">About me</a></p>
+
+<h2>Posts</h2>
+{% for post in site.posts %}
+<article>
+  <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+  <p><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %-d, %Y' }}</time></p>
+  {{ post.excerpt }}
+</article>
+{% endfor %}

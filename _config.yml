@@ -1,3 +1,41 @@
-theme: jekyll-theme-minimal
 title: Chris Tran's Blog
-description: Showing what I'm working on
+author: Chris Tran
+description: What I'm working on
+repository: cdtran/cdtran.github.io
+social_links:
+  github: https://github.com/cdtran
+  linkedin: https://www.linkedin.com/in/chris-d-tran/
+social:
+  name: Chris Tran
+  links:
+    - https://github.com/cdtran
+    - https://www.linkedin.com/in/chris-d-tran/
+# Set these for local production builds. GitHub Actions supplies them on deployment.
+url: "https://cdtran.github.io"
+baseurl: ""
+
+theme: jekyll-theme-minimal
+lang: en
+timezone: America/Los_Angeles
+show_excerpts: true
+permalink: /:year/:month/:day/:title/
+
+header_pages:
+  - about.md
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
