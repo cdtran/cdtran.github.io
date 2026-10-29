@@ -107,6 +107,6 @@ I want to note that this was one run per file with three simple questions, so mo
 
 The experiment answered enough to change my next step.
 
-My plan was to build a prototype if larger CSVs significantly increased analysis costs and created an opportunity for a more efficient architecture. This test didn't establish that opportunity.
+My plan was to build a prototype if larger CSVs significantly increased analysis costs and created an opportunity for a more efficient architecture. This test doesn't support that.
 
-There may still be a useful data analysis tool to build. Starting with CSVs makes the tool easier to try. It doesn't give someone a reason to use it.
+I think there's still opportunity to build a tool that queries databases. Starting with CSVs makes the tool easier to try and build. It doesn't give someone a reason to use it.
